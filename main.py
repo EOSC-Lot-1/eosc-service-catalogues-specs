@@ -213,7 +213,16 @@ app = FastAPI(title="Service Catalogue API", version="1.0")
 
 
 # --- Endpoint: GET /services ---
-@app.get("/services", response_model=PagingServiceBundle)
+@app.get(
+    "/services",
+    response_model=PagingServiceBundle,
+    responses={
+        400: {
+            "model": HTTPError,
+            "description": "Invalid query parameters (quantity, from, order or sort)",
+        }
+    },
+)
 async def get_services(
         keyword: Optional[str] = Query(None, description="Keyword to refine the search"),
         from_: Optional[int] = Query(0, description="Starting index in the result set (0-based)", alias="from"),

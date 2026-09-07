@@ -117,6 +117,16 @@
               }
             }
           },
+          "400": {
+            "description": "Invalid query parameters (quantity, from, order or sort)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPError"
+                }
+              }
+            }
+          },
           "422": {
             "description": "Validation Error",
             "content": {
@@ -205,6 +215,19 @@
           "category-training_and_support-education_and_training"
         ],
         "title": "Category"
+      },
+      "HTTPError": {
+        "properties": {
+          "detail": {
+            "type": "string",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "required": [
+          "detail"
+        ],
+        "title": "HTTPError"
       },
       "HTTPValidationError": {
         "properties": {
@@ -567,9 +590,7 @@
           "scientificDomains",
           "categories",
           "targetUsers",
-          "accessModes",
           "languageAvailabilities",
-          "securityContactEmail",
           "trl",
           "orderType"
         ],

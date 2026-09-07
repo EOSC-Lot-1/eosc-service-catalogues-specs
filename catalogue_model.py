@@ -69,6 +69,7 @@ class Service(BaseModel):
     targetUsers: List[TargetUser] = Field(
         description="List of target users for the service")
     accessModes: Optional[List[AccessMode]] = Field(
+        None,
         description="Types of access provided by the service")
     tags: Optional[List[str]] = Field(
         None,
@@ -81,8 +82,10 @@ class Service(BaseModel):
         None,
         description="Email address for the service's helpdesk",
         examples=['helpdesk@example.org'])
-    securityContactEmail: Optional[str] = Field(description="Email address for security contact",
-                                                examples=['security@example.org'])
+    securityContactEmail: Optional[str] = Field(
+        None,
+        description="Email address for security contact",
+        examples=['security@example.org'])
     trl: TRL = Field(
         description="Technology Readiness Level of the service")
     userManual: Optional[str] = Field(
