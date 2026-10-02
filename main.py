@@ -18,7 +18,7 @@ MOCK_SERVICES = [
         ],
         "categories": [
             {
-                "category": "category-sharing_and_discovery-data"
+                "category": "service_classification-publishing_discovery"
             }
         ],
         "targetUsers": [
@@ -68,7 +68,7 @@ MOCK_SERVICES = [
         ],
         "categories": [
             {
-                "category": "category-access_physical_and_eInfrastructures-data_storage"
+                "category": "service_classification-storage_services"
             }
         ],
         "targetUsers": [
@@ -114,22 +114,22 @@ MOCK_SERVICES = [
         ],
         "categories": [
             {
-                "category": "category-access_physical_and_eInfrastructures-compute"
+                "category": "service_classification-compute_services"
             },
             {
-                "category": "category-access_physical_and_eInfrastructures-compute"
+                "category": "service_classification-compute_services"
             },
             {
-                "category": "category-access_physical_and_eInfrastructures-compute"
+                "category": "service_classification-compute_services"
             },
             {
-                "category": "category-access_physical_and_eInfrastructures-data_storage"
+                "category": "service_classification-storage_services"
             },
             {
-                "category": "category-access_physical_and_eInfrastructures-data_storage"
+                "category": "service_classification-storage_services"
             },
             {
-                "category": "category-sharing_and_discovery-software"
+                "category": "service_classification-science_gateways"
             }
         ],
         "targetUsers": [
@@ -177,7 +177,7 @@ MOCK_SERVICES = [
         ],
         "categories": [
             {
-                "category": "category-access_physical_and_eInfrastructures-data_storage"
+                "category": "service_classification-storage_services"
             }
         ],
         "targetUsers": [
@@ -209,7 +209,7 @@ MOCK_SERVICES = [
 ]
 
 # --- FastAPI App ---
-app = FastAPI(title="Service Catalogue API", version="1.0")
+app = FastAPI(title="Service Catalogue API", version="2.0.0")
 
 
 # --- Endpoint: GET /services ---

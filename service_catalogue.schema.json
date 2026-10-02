@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Service Catalogue API",
-    "version": "1.0"
+    "version": "2.0.0"
   },
   "paths": {
     "/services": {
@@ -193,28 +193,23 @@
       "Category": {
         "type": "string",
         "enum": [
-          "category-access_physical_and_eInfrastructures-compute",
-          "category-access_physical_and_eInfrastructures-data_storage",
-          "category-access_physical_and_eInfrastructures-instrument_and_equipment",
-          "category-access_physical_and_eInfrastructures-material_storage",
-          "category-access_physical_and_eInfrastructures-network",
-          "category-aggregators_and_integrators-aggregators_and_integrators",
-          "category-other-other",
-          "category-processing_and_analysis-data_analysis",
-          "category-processing_and_analysis-data_management",
-          "category-processing_and_analysis-measurement_and_materials_analysis",
-          "category-security_and_operations-operations_and_infrastructure_management_services",
-          "category-security_and_operations-security_and_identity",
-          "category-sharing_and_discovery-applications",
-          "category-sharing_and_discovery-data",
-          "category-sharing_and_discovery-development_resources",
-          "category-sharing_and_discovery-samples",
-          "category-sharing_and_discovery-scholarly_communication",
-          "category-sharing_and_discovery-software",
-          "category-training_and_support-consultancy_and_support",
-          "category-training_and_support-education_and_training"
+          "service_classification-publishing_discovery",
+          "service_classification-research_assessment_monitoring",
+          "service_classification-data_management_curation",
+          "service_classification-data_processing_analysis",
+          "service_classification-compute_services",
+          "service_classification-storage_services",
+          "service_classification-networking_services",
+          "service_classification-science_gateways",
+          "service_classification-instrumentation_physical_resources",
+          "service_classification-research_support_collaboration",
+          "service_classification-training_skills_development",
+          "service_classification-infrastructure_operations_services",
+          "service_classification-persistent_identifiers",
+          "service_classification-other"
         ],
-        "title": "Category"
+        "title": "Category",
+        "description": "Service classification.\n\npublishing_discovery - Publishing & Discovery: Examples include catch-all\n    repositories (e.g., Zenodo), data repositories (e.g., PANGAEA), software\n    repositories, scientific data collections (e.g., Copernicus and biobanks),\n    metadata aggregators and catalogues, scholarly knowledge graphs (SKGs),\n    service catalogues, instrument registries, APIs, web portals, and semantic\n    artefact catalogues (e.g., OntoPortal-based catalogues, EBI-based\n    catalogues, and TIB Terminology Services).\nresearch_assessment_monitoring - Research Assessment & Monitoring: Examples\n    include FAIR validators, Open Science monitoring tools, and research impact\n    and evaluation systems.\ndata_management_curation - Data Management & Curation: Examples include data\n    management plan tools (DMP tools), metadata editors, curation and annotation\n    platforms, and data policy management tools.\ndata_processing_analysis - Data Processing & Analysis: Examples include Jupyter\n    notebooks, workflow engines, analysis platforms, AI and machine-learning\n    services, and statistical tools.\ncompute_services - Compute Services: Examples include HPC clusters, cloud\n    computing infrastructure (IaaS), virtual machines, and container\n    orchestration platforms such as Kubernetes.\nstorage_services - Storage Services: Examples include object storage such as S3,\n    archival storage, file systems, backup services, long-term preservation\n    platforms, and secure storage services.\nnetworking_services - Networking Services: Examples include research networks\n    (NRENs), VPNs, high-speed data-transfer services, and federated connectivity\n    services.\nscience_gateways - Science Gateways: Examples include web-based research\n    platforms, virtual laboratories, and Virtual Research Environments (VREs).\ninstrumentation_physical_resources - Instrumentation & Physical Resources:\n    Examples include laboratory instruments, sensors, IoT devices, and\n    experimental facilities.\nresearch_support_collaboration - Research Support & Collaboration: Examples\n    include user-support and consultancy services, collaboration platforms, and\n    project-management tools.\ntraining_skills_development - Training & Skills Development: Examples include\n    e-learning platforms, MOOCs, training portals, webinars, and certification\n    services.\ninfrastructure_operations_services - Infrastructure Operations Services:\n    Examples include authentication and authorization infrastructures (AAI),\n    federated identity systems such as eduGAIN, monitoring systems, and helpdesk\n    platforms.\npersistent_identifiers - Persistent Identifiers: Examples include persistent\n    identifier and registry services for researchers, organizations, and\n    research resources, such as DOI, ORCID, and ROR.\nother - Other: Use this category if and only if the service does not match any\n    of the other classifications."
       },
       "HTTPError": {
         "properties": {
@@ -624,7 +619,7 @@
             "$ref": "#/components/schemas/Category",
             "description": "Category of the service",
             "examples": [
-              "category-processing_and_analysis-data_analysis"
+              "service_classification-data_processing_analysis"
             ]
           }
         },

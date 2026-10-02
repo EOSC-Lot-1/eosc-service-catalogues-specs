@@ -138,45 +138,75 @@ class ServiceProviderDomain(BaseModel):
 
 
 class Category(Enum):
-    # Physical and e-Infrastructure Access
-    access_physical_and_einfrastructure_compute = 'category-access_physical_and_eInfrastructures-compute'
-    access_physical_and_einfrastructure_data_storage = 'category-access_physical_and_eInfrastructures-data_storage'
-    access_physical_and_einfrastructure_instrument_and_equipment = 'category-access_physical_and_eInfrastructures-instrument_and_equipment'
-    access_physical_and_einfrastructure_material_storage = 'category-access_physical_and_eInfrastructures-material_storage'
-    access_physical_and_einfrastructure_network = 'category-access_physical_and_eInfrastructures-network'
+    """Service classification.
 
-    # Aggregators and Integrators
-    aggregators_and_integrators_aggregators_and_integrators = 'category-aggregators_and_integrators-aggregators_and_integrators'
+    publishing_discovery - Publishing & Discovery: Examples include catch-all
+        repositories (e.g., Zenodo), data repositories (e.g., PANGAEA), software
+        repositories, scientific data collections (e.g., Copernicus and biobanks),
+        metadata aggregators and catalogues, scholarly knowledge graphs (SKGs),
+        service catalogues, instrument registries, APIs, web portals, and semantic
+        artefact catalogues (e.g., OntoPortal-based catalogues, EBI-based
+        catalogues, and TIB Terminology Services).
+    research_assessment_monitoring - Research Assessment & Monitoring: Examples
+        include FAIR validators, Open Science monitoring tools, and research impact
+        and evaluation systems.
+    data_management_curation - Data Management & Curation: Examples include data
+        management plan tools (DMP tools), metadata editors, curation and annotation
+        platforms, and data policy management tools.
+    data_processing_analysis - Data Processing & Analysis: Examples include Jupyter
+        notebooks, workflow engines, analysis platforms, AI and machine-learning
+        services, and statistical tools.
+    compute_services - Compute Services: Examples include HPC clusters, cloud
+        computing infrastructure (IaaS), virtual machines, and container
+        orchestration platforms such as Kubernetes.
+    storage_services - Storage Services: Examples include object storage such as S3,
+        archival storage, file systems, backup services, long-term preservation
+        platforms, and secure storage services.
+    networking_services - Networking Services: Examples include research networks
+        (NRENs), VPNs, high-speed data-transfer services, and federated connectivity
+        services.
+    science_gateways - Science Gateways: Examples include web-based research
+        platforms, virtual laboratories, and Virtual Research Environments (VREs).
+    instrumentation_physical_resources - Instrumentation & Physical Resources:
+        Examples include laboratory instruments, sensors, IoT devices, and
+        experimental facilities.
+    research_support_collaboration - Research Support & Collaboration: Examples
+        include user-support and consultancy services, collaboration platforms, and
+        project-management tools.
+    training_skills_development - Training & Skills Development: Examples include
+        e-learning platforms, MOOCs, training portals, webinars, and certification
+        services.
+    infrastructure_operations_services - Infrastructure Operations Services:
+        Examples include authentication and authorization infrastructures (AAI),
+        federated identity systems such as eduGAIN, monitoring systems, and helpdesk
+        platforms.
+    persistent_identifiers - Persistent Identifiers: Examples include persistent
+        identifier and registry services for researchers, organizations, and
+        research resources, such as DOI, ORCID, and ROR.
+    other - Other: Use this category if and only if the service does not match any
+        of the other classifications.
+    """
 
-    # Other
-    other_other = 'category-other-other'
-
-    # Processing and Analysis
-    processing_and_analysis_data_analysis = 'category-processing_and_analysis-data_analysis'
-    processing_and_analysis_data_management = 'category-processing_and_analysis-data_management'
-    processing_and_analysis_measurement_and_materials_analysis = 'category-processing_and_analysis-measurement_and_materials_analysis'
-
-    # Security and Operations
-    security_and_operations_operations_and_infrastructure_management_services = 'category-security_and_operations-operations_and_infrastructure_management_services'
-    security_and_operations_security_and_identity = 'category-security_and_operations-security_and_identity'
-
-    # Sharing and Discovery
-    sharing_and_discovery_applications = 'category-sharing_and_discovery-applications'
-    sharing_and_discovery_data = 'category-sharing_and_discovery-data'
-    sharing_and_discovery_development_resources = 'category-sharing_and_discovery-development_resources'
-    sharing_and_discovery_samples = 'category-sharing_and_discovery-samples'
-    sharing_and_discovery_scholarly_communication = 'category-sharing_and_discovery-scholarly_communication'
-    sharing_and_discovery_software = 'category-sharing_and_discovery-software'
-
-    # Training and Support
-    training_and_support_consultancy_and_support = 'category-training_and_support-consultancy_and_support'
-    training_and_support_education_and_training = 'category-training_and_support-education_and_training'
+    publishing_discovery = 'service_classification-publishing_discovery'
+    research_assessment_monitoring = 'service_classification-research_assessment_monitoring'
+    data_management_curation = 'service_classification-data_management_curation'
+    data_processing_analysis = 'service_classification-data_processing_analysis'
+    compute_services = 'service_classification-compute_services'
+    storage_services = 'service_classification-storage_services'
+    networking_services = 'service_classification-networking_services'
+    science_gateways = 'service_classification-science_gateways'
+    instrumentation_physical_resources = 'service_classification-instrumentation_physical_resources'
+    research_support_collaboration = 'service_classification-research_support_collaboration'
+    training_skills_development = 'service_classification-training_skills_development'
+    infrastructure_operations_services = 'service_classification-infrastructure_operations_services'
+    persistent_identifiers = 'service_classification-persistent_identifiers'
+    other = 'service_classification-other'
 
 
 class ServiceCategory(BaseModel):
     category: Category = Field(
         description="Category of the service",
-        examples=['category-processing_and_analysis-data_analysis'])
+        examples=['service_classification-data_processing_analysis'])
 
 
 class TargetUser(Enum):
